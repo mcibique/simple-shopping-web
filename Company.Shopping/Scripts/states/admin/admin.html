@@ -1,0 +1,36 @@
+﻿<h2 class="content-header">Product Management</h2>
+<table id="product-management">
+  <thead>
+    <tr>
+      <th class="name-column">Name</th>
+      <th class="price-column">Price</th>
+      <th class="description-column">Description</th>
+      <th class="rating-column">Rating</th>
+      <th class="image-url-column">Image URL</th>
+      <th class="actions-column"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="product in vm.products track by product.id" ng-class-odd="'odd-product'">
+      <td>{{ ::product.name }}</td>
+      <td>{{ ::product.price | currency }}</td>
+      <td>{{ ::product.description }}</td>
+      <td>{{ ::product.rating }}</td>
+      <td>{{ ::product.imageUrl }}</td>
+      <td class="actions-column">
+        <a href="javascript:void(0)" ui-sref="edit({ id: product.id })">Edit</a>
+        <a href="javascript:void(0)" ng-click="vm.deleteProduct(product)">Delete</a>
+      </td>
+    </tr>
+    <tr class="odd-product empty-row" ng-if="vm.products.length === 0">
+      <td colspan="6">
+        There are no products available. Would you like to <a ui-sref="create">create one</a>?
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<section class="buttonry dettached-buttonry">
+  <button type="button" class="button" ui-sref="create">New product</button>
+  <button type="button" class="button" ui-sref="products">Back to shopping</button>
+</section>

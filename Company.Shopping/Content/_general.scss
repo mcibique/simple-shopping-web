@@ -1,0 +1,29 @@
+﻿@import 'variables';
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a,
+a:link,
+a:hover,
+a:active {
+    color: $text-color;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: $text-color-shadow;
+    text-decoration: underline;
+}

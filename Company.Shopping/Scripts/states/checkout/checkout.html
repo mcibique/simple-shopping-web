@@ -1,0 +1,59 @@
+﻿<h2 class="content-header">Checkout</h2>
+<ul class="checkout-summary" ng-if="vm.basketProducts.length">
+  <li class="checkout-item" ng-repeat="product in vm.basketProducts track by product.id">
+    <div class="checkout-product">
+      <p class="checkout-product-name">{{ ::product.name }}</p>
+      <p class="checkout-product-price">{{ ::product.price | currency }}</p>
+      <p class="checkout-product-description">{{ ::product.description }}</p>
+    </div>
+    <div class="checkout-amount">
+      <button type="button" class="button checkout-amount-increase" ng-click="vm.increase(product)"><i class="icon icon-plus"></i></button>
+      <span class="checkout-amount-value">{{ vm.getProductAmount(product) }}</span>
+      <button type="button" class="button checkout-amount-decrease" ng-click="vm.decrease(product)"><i class="icon icon-minus"></i></button>
+    </div>
+  </li>
+  <li class="checkout-item checkout-total">
+    <div class="checkout-product checkout-total-text">
+      Total:
+    </div>
+    <div class="checkout-amount checkout-total-value">
+      {{ vm.getTotal() | currency }}
+    </div>
+  </li>
+</ul>
+<p class="checkout-empty-summary" ng-if="!vm.basketProducts.length">Your basket is empty. You can go to <a ui-sref="products">products</a> and start shopping.</p>
+<form class="checkout-form" name="orderForm" ng-submit="vm.submit()">
+  <div class="form-row">
+    <div class="form-column">
+      <label for="first-name">First name</label>
+      <input type="text" id="first-name" name="firstName" ng-model="vm.address.firstName" />
+    </div>
+    <div class="form-column">
+      <label for="last-name">Last name</label>
+      <input type="text" id="last-name" name="lastName" ng-model="vm.address.lastName" />
+    </div>
+  </div>
+  <div class="form-row">
+    <label for="first-address-line">First address line</label>
+    <input class="double-size" type="text" id="first-address-line" name="firstAddressLine" ng-model="vm.address.firstAddressLine" />
+  </div>
+  <div class="form-row">
+    <label for="second-address-line">Second address line</label>
+    <input class="double-size" type="text" id="second-address-line" name="secondAddressLine" ng-model="vm.address.secondAddressLine" />
+  </div>
+  <div class="form-row">
+    <div class="form-column">
+      <label for="post-code">Post code</label>
+      <input type="text" id="post-code" name="postCode" ng-model="vm.address.postCode" />
+    </div>
+    <div class="form-column">
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" ng-model="vm.address.city" />
+    </div>
+  </div>
+  <div class="buttonry">
+    <button type="submit" class="button" ng-disabled="!vm.basketProducts.length">Place order</button>
+    <button type="button" class="button" ui-sref="products">Back to shopping</button>
+    <button type="button" class="button" ng-disabled="!vm.basketProducts.length" ng-click="vm.clearBasket()">Discard</button>
+  </div>
+</form>

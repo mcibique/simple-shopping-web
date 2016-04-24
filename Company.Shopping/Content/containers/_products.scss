@@ -1,0 +1,126 @@
+﻿@import '../variables';
+@import '../mixins';
+
+#product-catalogue {
+    @include clearfix;
+    margin-bottom: 2rem;
+
+    .product-wrapper {
+        float: left;
+        padding: 1rem $content-padding;
+        width: percentage(1/4);
+    }
+
+    .product {
+        border: 1px solid $border-color;
+        padding: 1rem 5%;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+
+        &.is-new {
+            &:after {
+                position: absolute;
+                top: 6px;
+                right: -22px;
+                content: 'new';
+                background-color: #c00;
+                color: #fff;
+                width: 80px;
+                height: 2rem;
+                line-height: 2rem;
+                font-weight: 600;
+                font-size: 1.2rem;
+                text-align: center;
+                transform: rotateZ(45deg);
+            }
+        }
+    }
+
+    .product-price-and-rating {
+        @include clearfix;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .product-price {
+        float: left;
+        width: 50%;
+        font-size: 2rem;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .product-rating {
+        float: left;
+        width: 50%;
+        text-align: right;
+
+        &.low-rated {
+            visibility: hidden;
+        }
+    }
+
+    .product-name {
+        display: block;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 2.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .product-description {
+        text-align: left;
+        max-width: 200px;
+        margin: 1rem auto;
+        font-size: 1.2rem;
+
+        @media (max-width: $breakpoint-tablet) {
+            max-width: 400px;
+        }
+    }
+
+    .product-basket-info {
+        line-height: 2rem;
+        visibility: hidden;
+        color: #0c0;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .in-basket {
+        .product-basket-info {
+            visibility: visible;
+        }
+    }
+
+    .checkout-button {
+        margin: 0 auto;
+        display: block;
+
+        @media (min-width: $breakpoint-mobile-large + 1px) {
+            display: none;
+        }
+    }
+
+    @media (max-width: $breakpoint-laptop) {
+        .product-wrapper {
+            width: percentage(1/3);
+        }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        .product-wrapper {
+            width: percentage(1/2);
+        }
+    }
+
+    @media (max-width: $breakpoint-mobile-large) {
+        .product-wrapper {
+            float: none;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+﻿@import '../variables';
+
+#product-management {
+    /* solve responsive design for <$breakpoint-mobile-large */
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 1rem $content-padding;
+
+    thead th {
+        text-align: left;
+        line-height: 2rem;
+        padding: 1rem;
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+    tbody td {
+        padding: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .odd-product {
+        background-color: #dedede;
+    }
+
+    .name-column {
+        width: 20%;
+    }
+
+    .price-column {
+        width: 6%;
+    }
+
+    .description-column {
+        width: 30%;
+    }
+
+    .rating-column {
+        width: 6%;
+    }
+
+    .image-url-column {
+        width: 28%;
+    }
+
+    .actions-column {
+        width: 10%;
+        line-height: 3rem;
+
+        @media (min-width: $breakpoint-tablet + 1px) {
+            a + a {
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    .empty-row td {
+        line-height: 4rem;
+    }
+}

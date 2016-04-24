@@ -1,0 +1,39 @@
+﻿@if (this.IsDebug)
+{
+    <script src="@Url.Content("~/scripts/vendor/angular/angular.js")"></script>
+    <script src="@Url.Content("~/scripts/vendor/angular-i18n/angular-locale_en-gb.js")"></script>
+    <script src="@Url.Content("~/scripts/vendor/angular-ui-router/release/angular-ui-router.js")"></script>
+    <script src="@Url.Content("~/scripts/app.dev.js")"></script>
+
+    <script>
+      (function (window, angular) {
+        'use strict';
+
+        // environment/server related variables
+        angular
+          .module('env', [])
+          .constant('debug', true)
+          .constant('appPath', '@this.Request.ApplicationPath')
+          .constant('apiPath', '@this.Request.ApplicationPath/api');
+      })(window, window.angular);
+    </script>
+}
+else
+{
+    <script src="/scripts/vendor.min.js"></script>
+    <script src="/scripts/app.min.js"></script>
+
+    @* TODO: minify me - create a razor helper and use https://github.com/PureKrome/YUICompressor.NET *@
+    <script>
+      (function (window, angular) {
+        'use strict';
+
+        // environment/server related variables
+        angular
+          .module('env', [])
+          .constant('debug', false)
+          .constant('appPath', '@this.Request.ApplicationPath')
+          .constant('apiPath', '@this.Request.ApplicationPath/api');
+      })(window, window.angular);
+    </script>
+}

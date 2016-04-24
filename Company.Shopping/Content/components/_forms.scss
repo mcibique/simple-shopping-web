@@ -1,0 +1,81 @@
+﻿@import '../mixins';
+@import '../variables';
+
+form {
+    padding: 0 $content-padding;
+}
+
+.form-row {
+    @include clearfix;
+    margin-bottom: 1rem;
+
+    .form-column {
+        float: left;
+        width: 250px;
+        margin-right: 20px;
+
+        @media (max-width: $breakpoint-mobile-large) {
+            width: 100%;
+            float: none;
+            margin-bottom: 1rem;
+        }
+    }
+
+    label {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 2rem;
+    }
+
+    textarea {
+        display: block;
+        resize: none;
+    }
+
+    input,
+    textarea {
+        width: 250px;
+
+        &.double-size {
+            width: 520px;
+        }
+
+        @media (max-width: $breakpoint-mobile-large) {
+            width: 100%;
+
+            &.double-size {
+                width: 100%;
+            }
+        }
+    }
+
+    input,
+    select,
+    textarea {
+        border: 0.1rem solid $border-color;
+        border-radius: 0.2rem;
+        padding: 0.4rem 2rem;
+        font-size: 1.8rem;
+        line-height: 3rem;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 6px $border-color;
+        }
+    }
+}
+
+.buttonry {
+    margin-top: 2rem;
+    line-height: 4rem;
+
+    @media (max-width: $breakpoint-mobile-large) {
+        text-align: center;
+    }
+}
+
+.dettached-buttonry {
+    margin-left: $content-padding;
+    margin-right: $content-padding;
+}

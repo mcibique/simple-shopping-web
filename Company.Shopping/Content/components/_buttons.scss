@@ -1,0 +1,34 @@
+﻿@import '../variables';
+
+.button {
+    border: 0.1rem solid $border-color;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 2rem;
+    padding: 0.4rem 2rem;
+    border-radius: 0.2rem;
+    background-color: $button-background-color;
+
+    &:hover {
+        background-color: $button-background-hover-color;
+    }
+
+    &[disabled] {
+        opacity: 0.75;
+
+        &:hover {
+            background-color: $button-background-color;
+            cursor: not-allowed;
+        }
+    }
+
+    + .button {
+        margin-left: 1rem;
+    }
+}
+
+.button-large {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    padding: 1.4rem 3rem;
+}

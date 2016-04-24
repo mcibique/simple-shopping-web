@@ -1,0 +1,17 @@
+﻿<h2 class="content-header">Available products</h2>
+<section id="product-catalogue">
+  <div ng-repeat="product in vm.products track by product.id" class="product-wrapper">
+    <div class="product" ng-class="{ 'in-basket': vm.isProductInBasket(product), 'is-new': product.isNew }">
+      <span class="product-name">{{ ::product.name }}</span>
+      <img class="product-image" ng-src="{{ ::product.imageUrl }}" alt="{{ ::product.name }}" height="200" width="200" />
+      <div class="product-price-and-rating">
+        <div class="product-price">{{ ::product.price | currency }}</div>
+        <div class="product-rating" rating="product.rating" ng-class="{ 'low-rated': product.rating < 3 }"></div>
+      </div>
+      <p class="product-description">{{ ::product.description }}</p>
+      <p class="product-basket-info">{{ vm.getProductAmount(product) }} in basket</p>
+      <button class="button add-to-basket-button" type="button" ng-click="vm.addToBasket(product)">Add to basket</button>
+    </div>
+  </div>
+  <button type="button" class="checkout-button button button-large" ui-sref="checkout">Checkout</button>
+</section>

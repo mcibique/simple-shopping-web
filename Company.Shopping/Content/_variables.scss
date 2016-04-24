@@ -1,0 +1,17 @@
+﻿$font-family: 'Source Sans Pro', Arial !default;
+$text-color: #333;
+$text-color-shadow: lighten($text-color, 20%);
+
+$border-color: #ccc;
+
+$button-background-color: #dedede;
+$button-background-hover-color: rgba($button-background-color, 0.8);
+
+$header-background-color: #fafafa;
+$footer-background-color: $header-background-color;
+
+$content-padding: 1.5%;
+
+$breakpoint-laptop: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile-large: 425px;

@@ -1,0 +1,36 @@
+﻿@import '../variables';
+
+.basket-status {
+    $height: 64px;
+    $width: 80px;
+    display: inline-block;
+    height: $height;
+    width: $width;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #fafafa;
+        outline: 0.1rem solid $border-color;
+    }
+
+    .icon-basket {
+        display: inline-block;
+        width: $width;
+        font-size: $height;
+        height: $height;
+        line-height: $height;
+        opacity: 0.1;
+    }
+
+    .basket-total-items {
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        right: 0;
+        line-height: 48px;
+        width: 70px;
+        font-size: 48px;
+        text-shadow: 0 0 1px $text-color-shadow;
+    }
+}

@@ -1,0 +1,16 @@
+﻿.rating-list {
+    display: inline-block;
+
+    .rating-item {
+        display: inline-block;
+    }
+
+    .icon-star {
+        color: #ffd700;
+        font-size: 1.6rem;
+
+        &:before {
+            vertical-align: middle;
+        }
+    }
+}

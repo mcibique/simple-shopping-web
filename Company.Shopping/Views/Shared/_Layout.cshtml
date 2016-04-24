@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@this.Title</title>
+  @Html.Partial("~/Views/Shared/_Styles.cshtml")
+  @RenderSection("styles", required: false)
+</head>
+<body ng-app="shopping">
+  <div id="content-wrapper">
+    <header ng-controller="HeaderController as header">
+      <div class="content-box">
+        <h1><a ui-sref="products">Simple Shopping</a></h1>
+        <span basket-status ng-if="header.shouldShowBasketStatus()"></span>
+      </div>
+    </header>
+    <main>
+      <div class="content-box">
+        @RenderBody()
+      </div>
+    </main>
+    <footer>
+      <div class="content-box">
+        <p><a ui-sref="admin">Admin page</a></p>
+        <p>Copyright &copy; Company 2016</p>
+      </div>
+    </footer>
+  </div>
+  @Html.Partial("~/Views/Shared/_Scripts.cshtml")
+  @RenderSection("scripts", required: false)
+</body>
+</html>

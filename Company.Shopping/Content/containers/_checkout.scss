@@ -1,0 +1,134 @@
+﻿@import '../mixins';
+@import '../variables';
+
+.checkout-summary {
+    margin: 2rem $content-padding;
+    border: 0.1rem solid $border-color;
+
+    .checkout-item {
+        @include clearfix;
+        display: block;
+        padding: 1rem 2rem;
+
+        + .checkout-item {
+            border-top: 0.1rem solid $border-color;
+        }
+    }
+
+    .checkout-product {
+        float: left;
+        width: 72%;
+    }
+
+    .checkout-amount {
+        float: left;
+        width: 28%;
+        padding: 3rem 3rem;
+        font-size: 0;
+        text-align: center;
+
+        @media (max-width: $breakpoint-mobile-large) {
+            padding: 1rem 3rem;
+        }
+
+        .checkout-amount-increase,
+        .checkout-amount-value,
+        .checkout-amount-decrease {
+            line-height: 4rem;
+            width: 4rem;
+            padding: 0;
+            font-size: 1.6rem;
+            text-align: center;
+
+            .icon:before {
+                vertical-align: middle;
+            }
+        }
+
+        .checkout-amount-increase {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+
+            @media (max-width: $breakpoint-mobile-large) {
+                border-radius: 0.2rem;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+
+        .checkout-amount-value {
+            display: inline-block;
+            border-top: 0.1rem solid $border-color;
+            border-bottom: 0.1rem solid $border-color;
+
+            @media (max-width: $breakpoint-mobile-large) {
+                border: 0;
+                border-left: 0.1rem solid $border-color;
+                border-right: 0.1rem solid $border-color;
+            }
+        }
+
+        .checkout-amount-decrease {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+
+            @media (max-width: $breakpoint-mobile-large) {
+                border-radius: 0.2rem;
+                border-top-right-radius: 0;
+                border-top-left-radius: 0;
+            }
+        }
+    }
+
+    .checkout-product-name {
+        line-height: 2.5rem;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .checkout-product-price {
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .checkout-product-description {
+        line-height: 1.6rem;
+        font-size: 1.3rem;
+    }
+
+    .checkout-total-text {
+        text-align: right;
+        font-size: 3rem;
+
+        @media (max-width: $breakpoint-mobile-large) {
+            width: 50%;
+        }
+    }
+
+    .checkout-total-value {
+        padding: 0;
+        font-size: 3rem;
+        font-weight: 700;
+
+        @media (max-width: $breakpoint-mobile-large) {
+            width: 50%;
+        }
+    }
+}
+
+.checkout-empty-summary {
+    margin: 2rem $content-padding;
+    border: 0.1rem solid $border-color;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+
+    a {
+        font-weight: 600;
+    }
+}
+
+.checkout-form {
+    margin-bottom: 2rem;
+}

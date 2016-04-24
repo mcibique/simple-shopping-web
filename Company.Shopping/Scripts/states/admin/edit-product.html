@@ -1,0 +1,23 @@
+﻿<h2 class="content-header">Edit product</h2>
+<form name="productForm" ng-submit="vm.submit(vm.product)">
+  <div class="form-row">
+    <div class="form-column">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" ng-model="vm.product.name" placeholder="e.g. Product Name 1" autofocus />
+    </div>
+    <div>
+      <label for="price">Price</label>
+      <input type="text" id="price" name="price" ng-model="vm.product.price" placeholder="in GBP" />
+    </div>
+  </div>
+  <div class="form-row">
+    <label for="image-url">Image URL</label>
+    <input type="text" id="image-url" name="imageUrl" ng-model="vm.product.imageUrl" placeholder="e.g. //placehold.it/200x200" class="double-size" />
+  </div>
+  <div class="form-row">
+    <label for="description">Description</label>
+    <textarea type="text" id="description" name="description" ng-model="vm.product.description" placeholder="A simple description which is going to be displayed to the user" rows="6" class="double-size"></textarea>
+  </div>
+  <button type="submit" class="button" ng-disabled="!vm.product.name">Save</button>
+  <button type="button" class="button" ui-sref="admin">Cancel</button>
+</form>

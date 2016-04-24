@@ -1,0 +1,48 @@
+﻿@font-face {
+    font-family: 'shopping-web';
+    src: url('fonts/shopping-web.eot?19419818');
+    src: url('fonts/shopping-web.eot?19419818#iefix') format('embedded-opentype'), url('fonts/shopping-web.woff2?19419818') format('woff2'), url('fonts/shopping-web.woff?19419818') format('woff'), url('fonts/shopping-web.ttf?19419818') format('truetype'), url('fonts/shopping-web.svg?19419818#shopping-web') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon:before {
+    font-family: "shopping-web";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-basket:before {
+    content: '\e800';
+}
+.icon-plus:before {
+    content: '\e801';
+}
+.icon-star:before {
+    content: '\e802';
+}
+.icon-twitter:before {
+    content: '\e803';
+}
+.icon-facebook-squared:before {
+    content: '\e804';
+}
+.icon-youtube:before {
+    content: '\e805';
+}
+.icon-gplus:before {
+    content: '\e806';
+}
+.icon-minus:before {
+    content: '\e807';
+}

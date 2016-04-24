@@ -1,0 +1,100 @@
+﻿@import 'variables';
+
+$header-height: 10rem !default;
+$footer-height: 10rem !default;
+$content-box-max-width: 1200px !default;
+
+body {
+    height: 100%;
+    font-family: $font-family;
+    font-weight: 400;
+    color: $text-color;
+}
+
+#content-wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+.content-box {
+    margin: 0 auto;
+    max-width: $content-box-max-width;
+}
+
+header {
+    background-color: $header-background-color;
+    padding: ($header-height - 4rem) / 2 0;
+
+    h1 {
+        margin: 0;
+        padding: 0 $content-padding;
+        font-weight: 700;
+        font-size: 3rem;
+        line-height: 4rem;
+
+        @media (max-width: $breakpoint-mobile-large) {
+            text-align: center;
+        }
+    }
+
+    a,
+    a:active,
+    a:link,
+    a:hover {
+        text-decoration: none;
+    }
+
+    .content-box {
+        position: relative;
+    }
+
+    .basket-status {
+        position: absolute;
+        right: 1rem;
+        top: -1rem;
+    }
+
+    @media (max-width: $breakpoint-mobile-large) {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        .basket-status {
+            position: relative;
+            display: block;
+            top: auto;
+            right: auto;
+            margin: 0 auto;
+        }
+    }
+}
+
+main {
+    padding-bottom: $footer-height;
+}
+
+.content-header {
+    font-size: 2.5rem;
+    line-height: 4rem;
+    margin: 0;
+    padding: 0 $content-padding;
+
+    @media (max-width: $breakpoint-mobile-large) {
+        text-align: center;
+    }
+}
+
+footer {
+    background-color: $footer-background-color;
+    padding: 2rem 0;
+    position: absolute;
+    bottom: 0;
+    height: $footer-height;
+    width: 100%;
+
+    p {
+        text-align: center;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        padding: 0 $content-padding;
+    }
+}
