@@ -7,6 +7,7 @@ import filesort from 'gulp-angular-filesort';
 import gulp from 'gulp';
 import minifyCSS from 'gulp-minify-css';
 import ngAnnotate from 'gulp-ng-annotate';
+import rename from 'gulp-rename';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import uglify from 'gulp-uglify';
@@ -79,6 +80,7 @@ gulp.task('build:styles', function () {
     .pipe(minifyCSS({
       keepSpecialComments: false
     }))
+    .pipe(rename('main.min.css'))
     .pipe(gulp.dest(paths.content.path));
 });
 

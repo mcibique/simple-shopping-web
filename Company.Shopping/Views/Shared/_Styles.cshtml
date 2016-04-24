@@ -1,1 +1,8 @@
-﻿<link rel="stylesheet" href="@Url.Content("~/content/main.css")" />
+﻿@if (this.IsDebug)
+{
+    <link rel="stylesheet" href="@Url.Content("~/content/main.css")" />
+}
+else
+{
+    <link rel="stylesheet" href="@Url.Content("~/content/main.min.css")" />
+}

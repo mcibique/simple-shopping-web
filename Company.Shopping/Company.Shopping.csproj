@@ -132,6 +132,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\shopping-web.svg" />
+    <Content Include="Content\main.min.css">
+      <DependentUpon>main.scss</DependentUpon>
+    </Content>
     <Content Include="Content\main.scss" />
   </ItemGroup>
   <ItemGroup>
